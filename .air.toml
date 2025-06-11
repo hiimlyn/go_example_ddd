@@ -21,7 +21,7 @@
   send_interrupt = true
   watch_dir = ["."]
   env = ["APP_ENV=dev"]
-  env_file = ".env"
+  env_file = ".env.dev"
 
 [color]
   main = "yellow"
