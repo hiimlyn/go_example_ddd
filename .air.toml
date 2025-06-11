@@ -8,8 +8,8 @@
   # bin = "tmp/main"
 
   include_ext = ["go", "tpl", "tmpl", "html"]
-  exclude_dir = ["tmp", "vendor", "node_modules", "frontend"]
-  exclude_file = []
+  exclude_dir = ["tmp", "vendor", "node_modules", "frontend", ".git"]
+  exclude_file = [".gitignore"]
   follow_symlink = true
 
   kill_on_fail = true
@@ -20,7 +20,6 @@
   grace_time = 500
   send_interrupt = true
   watch_dir = ["."]
-  env = ["APP_ENV=dev"]
   env_file = ".env.dev"
 
 [color]
