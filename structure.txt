@@ -1,0 +1,37 @@
+go-fiber-app/
+├── cmd/
+│   └── server/             # main.go đặt ở đây, entrypoint chính
+│       └── main.go
+├── internal/               # Code core, business logic (Không expose ra ngoài)
+│   ├── app/                # Khởi tạo fiber, route, middleware
+│   │   ├── app.go
+│   │   └── route.go
+│   ├── handler/            # HTTP handler, controller
+│   │   └── user_handler.go
+│   ├── service/            # Business logic, service layer
+│   │   └── user_service.go
+│   ├── model/              # Struct, DTO, schema
+│   │   └── user.go
+│   ├── repository/         # Database access, repo pattern
+│   │   └── user_repo.go
+│   ├── middleware/         # Custom middleware
+│   │   └── auth.go
+│   ├── config/             # Load config, env, settings
+│   │   └── config.go
+│   └── util/               # Helper utils, error, common stuff
+│       └── hash.go
+├── pkg/                    # Public library (có thể dùng chung cho app khác)
+│   └── logger/             # Logging package, reusable stuff
+│       └── logger.go
+├── api/                    # OpenAPI/swagger spec (nếu có)
+│   └── openapi.yaml
+├── scripts/                # Script: migrate, seed, test, build, CI/CD
+│   └── migrate.sh
+├── test/                   # Integration test, e2e test
+│   └── user_test.go
+├── Dockerfile              # Docker build config
+├── .env                    # Env file (local)
+├── .gitignore
+├── go.mod
+├── go.sum
+└── README.md

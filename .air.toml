@@ -1,0 +1,33 @@
+[build]
+  cmd = "go build -o tmp/main.exe ./cmd/server/main.go" 
+  bin = "tmp/main.exe"
+  full_bin = ""
+
+  # Linux/Mac:
+  # cmd = "go build -o tmp/main ./cmd/server/main.go"
+  # bin = "tmp/main"
+
+  include_ext = ["go", "tpl", "tmpl", "html"]
+  exclude_dir = ["tmp", "vendor", "node_modules", "frontend"]
+  exclude_file = []
+  follow_symlink = true
+
+  kill_on_fail = true
+
+[run]
+  cmd = ""
+  delay = 200
+  grace_time = 500
+  send_interrupt = true
+  watch_dir = ["."]
+  env = ["APP_ENV=dev"]
+  env_file = ".env"
+
+[color]
+  main = "yellow"
+  watcher = "cyan"
+  build = "green"
+  runner = "magenta"
+
+[log]
+  time = true
